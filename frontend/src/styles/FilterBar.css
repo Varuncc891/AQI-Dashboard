@@ -1,0 +1,210 @@
+.filter-bar {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  animation: slideIn 0.3s ease-out;
+}
+
+.filter-header {
+  margin-bottom: 20px;
+}
+
+.filter-header h3 {
+  margin: 0 0 8px 0;
+  color: #2d3748;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.filter-subtitle {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+/* Special full-width rows */
+.filter-row-full {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.invisible-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.filter-group select {
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  transition: all 0.3s ease;
+  color: #2d3748;
+  width: 100%; /* Ensure all selects take full width of their container */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Specifically target the daily pattern and season selects */
+.filter-row .filter-group:nth-child(1) select,
+.filter-row .filter-group:nth-child(2) select {
+  font-size: 0.85rem; /* Slightly smaller font for longer text */
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.filter-group select:hover {
+  border-color: #cbd5e0;
+}
+
+.view-results-btn {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  height: 40px;
+}
+
+.view-results-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.2);
+}
+
+.view-results-btn:active {
+  transform: translateY(0);
+}
+
+.selected-city-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.city-badge {
+  background: #ebf8ff;
+  color: #3182ce;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.clear-city-btn {
+  background: none;
+  border: none;
+  color: #718096;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.clear-city-btn:hover {
+  color: #e53e3e;
+}
+
+.filter-row-full .filter-group select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .filter-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-bar {
+    padding: 20px;
+  }
+  
+  .filter-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .filter-group {
+    min-width: auto;
+  }
+  
+  .view-results-btn {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-bar {
+    padding: 16px;
+  }
+  
+  .filter-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .filter-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .filter-group select {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .view-results-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
